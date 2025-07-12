@@ -23,10 +23,20 @@
 
 ```shell
 # OneChain网络
-one_chain client call --package 0x2 --module coin --function mint_and_transfer --type-args <CoinType> --args <TreasuryCap> <amount> <recipient>
+one_chain client call \
+    --package 0x2 \
+    --module coin \
+    --function mint_and_transfer \
+    --type-args <CoinType> \
+    --args <TreasuryCap> <amount> <recipient>
 
 # Sui网络
-sui client call --package 0x2 --module coin --function mint_and_transfer --type-args <CoinType> --args <TreasuryCap> <amount> <recipient>
+sui client call \
+    --package 0x2 \
+    --module coin \
+    --function mint_and_transfer \
+    --type-args <CoinType> \
+    --args <TreasuryCap> <amount> <recipient>
 ```
 
 **示例（Sui 测试网）：**
@@ -34,7 +44,10 @@ sui client call --package 0x2 --module coin --function mint_and_transfer --type-
 铸造 100 USDH（注意：需转换为最小单位，100 USDH = 100 * 10^9 = 100000000000）​
 
 ```shell
-sui client call --package 0x2 --module coin --function mint_and_transfer \
+sui client call \
+    --package 0x2 \
+    --module coin \
+    --function mint_and_transfer \
     --type-args 0x71ccdb46d37bae1ce9fdca3e771c8c9c07dd29992747ec52558e0c34876b6c43::usdh::USDH \
     --args 0x1473016686c135ee958a424ef3749a96d424bd9d770173df1cbc3a76720c66e8 100000000000 0x23bf8c3d7d2d55f8b78a72e3ee2d53a849c9db976ac5e8142e3ee12be4cf81d6
 ```
@@ -47,38 +60,82 @@ sui client call --package 0x2 --module coin --function mint_and_transfer \
 
 ```shell
 # OneChain网络
-one_chain client call --package 0x2 --module coin --function update_name --type-args <CoinType> --args <TreasuryCap> <CoinMetadata> <NewName>
+one_chain client call \
+    --package 0x2 \
+    --module coin \
+    --function update_name \
+    --type-args <CoinType> \
+    --args <TreasuryCap> <CoinMetadata> <NewName>
 
 # Sui网络
-sui client call --package 0x2 --module coin --function update_name --type-args <CoinType> --args <TreasuryCap> <CoinMetadata> <NewName>
+sui client call \
+    --package 0x2 \
+    --module coin \
+    --function update_name \
+    --type-args <CoinType> \
+    --args <TreasuryCap> <CoinMetadata> <NewName>
 ```
 
 - **修改符号**
 
 ```shell
 # OneChain网络
-one_chain client call --package 0x2 --module coin --function update_symbol --type-args <CoinType> --args <TreasuryCap> <CoinMetadata> <NewSymbol>
+one_chain client call \
+    --package 0x2 \
+    --module coin \
+    --function update_symbol \
+    --type-args <CoinType> \
+    --args <TreasuryCap> <CoinMetadata> <NewSymbol>
 
 # Sui网络
-sui client call --package 0x2 --module coin --function update_symbol --type-args <CoinType> --args <TreasuryCap> <CoinMetadata> <NewSymbol>
+sui client call \
+    --package 0x2 \
+    --module coin \
+    --function update_symbol \
+    --type-args <CoinType> \
+    --args <TreasuryCap> <CoinMetadata> <NewSymbol>
 ```
 
 - **修改描述**
 
 ```shell
 # OneChain网络
-one_chain client call --package 0x2 --module coin --function update_description --type-args <CoinType> --args <TreasuryCap> <CoinMetadata> <NewDescription>
+one_chain client call \
+    --package 0x2 \
+    --module coin \
+    --function update_description \
+    --type-args <CoinType> \
+    --args <TreasuryCap> <CoinMetadata> <NewDescription>
 
 # Sui网络
-sui client call --package 0x2 --module coin --function update_description --type-args <CoinType> --args <TreasuryCap> <CoinMetadata> <NewDescription>
+sui client call  \
+    --package 0x2 \
+    --module coin \
+    --function update_description \
+    --type-args <CoinType> \
+    --args <TreasuryCap> <CoinMetadata> <NewDescription>
 ```
 
 - **修改图标**
 
 ```shell
 # OneChain网络
-one_chain client call --package 0x2 --module coin --function update_icon_url --type-args <CoinType> --args <TreasuryCap> <CoinMetadata> <NewUrl>
+one_chain client call \
+    --package 0x2 \
+    --module coin \
+    --function update_icon_url \
+    --type-args <CoinType> \
+    --args <TreasuryCap> <CoinMetadata> <NewUrl>
 
 # Sui网络
-sui client call --package 0x2 --module coin --function update_icon_url --type-args <CoinType> --args <TreasuryCap> <CoinMetadata> <NewUrl>
+sui client call  \
+    --package 0x2 \
+    --module coin \
+    --function update_icon_url \
+    --type-args <CoinType> \
+    --args <TreasuryCap> <CoinMetadata> <NewUrl>
 ```
+
+### 说明
+*   所有操作需替换 `<占位符>` 为实际值（如 `TreasuryCap`、接收地址等）
+*   金额需使用代币的最小单位（示例中 USDH 的小数位数为 9）
