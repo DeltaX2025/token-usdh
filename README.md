@@ -19,10 +19,37 @@
 
 ## 2. 常用操作指南
 
-### 2.1 发布合约操作
+### 2.1 发布合约操作sui
 
 ```shell
-sui client publish
+
+sui keytool import "这里是助记词" ed25519
+
+sui client active-address
+
+# 切换地址
+sui client switch --address 0x23bf8c3d7d2d55f8b78a72e3ee2d53a849c9db976ac5e8142e3ee12be4cf81d6
+
+# 切换环境
+sui client switch --env mainnet
+sui client switch --env testnet
+sui client switch --env devnet
+sui client switch --env localnet
+
+sui client active-env
+sui client new-env --alias mainnet --rpc https://fullnode.mainnet.sui.io:443
+
+# 发布合约
+sui client publish --gas-budget 100000000
+
+# 给账户发币
+sui client call \
+    --package 0x2 \
+    --module coin \
+    --function mint_and_transfer \
+    --type-args <CoinType> \
+    --args <TreasuryCap> <amount> <recipient>
+    
 ```
 
 ### 2.2 铸币操作
