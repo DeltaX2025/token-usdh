@@ -2,9 +2,9 @@
 name = "USDH"
 
 [dependencies]
-#One = { git = "https://github.com/one-chain-labs/onechain.git", subdir = "crates/sui-framework/packages/one-framework", rev = "main" }
+One = { git = "https://github.com/one-chain-labs/onechain.git", subdir = "crates/sui-framework/packages/one-framework", rev = "main" }
 
 [addresses]
-usdh = "0x71ccdb46d37bae1ce9fdca3e771c8c9c07dd29992747ec52558e0c34876b6c43"
+usdh = "0x0"
 sui = "0x2"
 std = "0x1"
